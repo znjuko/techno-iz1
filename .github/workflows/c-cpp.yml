@@ -36,5 +36,5 @@ jobs:
         run: ls -l build
 
       - name: running tests
-        run: make run-all-tests 
+        run: make run-all-tests
 
