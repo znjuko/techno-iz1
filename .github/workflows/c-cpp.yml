@@ -1,0 +1,40 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: installing cmake
+        run: sudo snap install cmake
+
+      - name: installing c++/c compiler
+        run: sudo apt install build-essential
+
+      - name: checking complier version
+        run: g++ --version
+
+      - name: installing git
+        run: sudo apt install git
+
+      - name: checking git version
+        run: git --version
+
+      - name: building our project
+        run: mkdir build \
+                   && cd build \
+                   && cmake -Dtest=ON --build .. \
+                   && make 
+
+      - name: checking directory
+        run: ls -l
+

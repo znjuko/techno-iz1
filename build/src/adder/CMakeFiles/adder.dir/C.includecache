@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/adder/adder.c
+adder.h
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/adder/adder.h
+
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/adder/adder.h
+
