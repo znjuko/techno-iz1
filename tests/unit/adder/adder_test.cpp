@@ -14,5 +14,5 @@ TEST(initialize, ok) {
 }
 
 TEST(initialize, nah) {
-    EXPECT_TRUE(adder(1,2)==4);
+    EXPECT_TRUE(adder(1,2)!=4);
 }
