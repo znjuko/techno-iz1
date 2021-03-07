@@ -1,0 +1,8 @@
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/CMakeFiles/techno_iz1.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/src/storage/CMakeFiles/rebuild_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/src/storage/CMakeFiles/edit_cache.dir
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/cmake-build-debug/src/storage/CMakeFiles/storage.dir

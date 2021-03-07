@@ -1,0 +1,1 @@
+ADD_LIBRARY(storage storage.c storage.h)
