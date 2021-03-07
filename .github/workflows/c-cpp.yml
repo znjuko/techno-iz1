@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-#      - name: installing cmake
-#        run: sudo snap install cmake
-
       - name: checking cmake version
         run: cmake --version
 
@@ -33,11 +30,13 @@ jobs:
         run: git --version
 
       - name: building our project
-        run: mkdir build \
-                   && cd build \
-                   && cmake -Dtest=ON --build .. \
-                   && make
+        run: mkdir build
 
       - name: checking directory
         run: ls -l
+
+      - name: ???
+        run:  cd build
+
+
 
