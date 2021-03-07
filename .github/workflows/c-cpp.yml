@@ -36,7 +36,8 @@ jobs:
         run: ls -l
 
       - name: ???
-        run:  cd build
+        run:  cd build && cmake -Dtest=ON --build .. && make
 
-
+      - name: checking directory
+        run: ls -l
 
