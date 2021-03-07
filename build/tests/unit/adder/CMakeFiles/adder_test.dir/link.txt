@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/adder_test.dir/adder_test.cpp.o CMakeFiles/adder_test.dir/main.cpp.o -o adder_test  ../../../src/adder/libadder.a ../../../lib/libgtest.a 

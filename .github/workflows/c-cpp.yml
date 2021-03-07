@@ -33,7 +33,7 @@ jobs:
         run: mkdir build \
                    && cd build \
                    && cmake -Dtest=ON --build .. \
-                   && make 
+                   && make
 
       - name: checking directory
         run: ls -l
