@@ -14,8 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: installing cmake
-        run: sudo snap install cmake
+#      - name: installing cmake
+#        run: sudo snap install cmake
+
+      - name: checking cmake version
+        run: cmake --version
 
       - name: installing c++/c compiler
         run: sudo apt install build-essential
