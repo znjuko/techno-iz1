@@ -199,7 +199,7 @@ TEST(FatalFailureOnAllThreadsTest, ExpectFatalFailureOnAllThreads) {
   EXPECT_FATAL_FAILURE_ON_ALL_THREADS(
       GenerateFatalFailureInAnotherThread(true), "expected");
   CheckTestFailureCount(0);
-  // We need to add a failure, because main() checks that there are failures.
+  // We need to add a failure, because cmd() checks that there are failures.
   // But when only this test is run, we shouldn't have any failures.
   ADD_FAILURE() << "This is an expected non-fatal failure.";
 }
@@ -218,7 +218,7 @@ TEST(NonFatalFailureOnAllThreadsTest, ExpectNonFatalFailureOnAllThreads) {
   EXPECT_NONFATAL_FAILURE_ON_ALL_THREADS(
       GenerateFatalFailureInAnotherThread(false), "expected");
   CheckTestFailureCount(0);
-  // We need to add a failure, because main() checks that there are failures,
+  // We need to add a failure, because cmd() checks that there are failures,
   // But when only this test is run, we shouldn't have any failures.
   ADD_FAILURE() << "This is an expected non-fatal failure.";
 }
@@ -226,7 +226,7 @@ TEST(NonFatalFailureOnAllThreadsTest, ExpectNonFatalFailureOnAllThreads) {
 }  // namespace
 }  // namespace testing
 
-int main(int argc, char **argv) {
+int cmd(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 
   const int result = RUN_ALL_TESTS();  // Expected to fail.

@@ -10,9 +10,9 @@ extern "C" {
 }
 
 TEST(initialize, ok) {
-    EXPECT_TRUE(adder(1,2)==4);
+    EXPECT_TRUE(adder(1,2)==3);
 }
 
 TEST(initialize, nah) {
-    EXPECT_TRUE(adder(1,2)!=4);
+    EXPECT_TRUE(adder(1,2)==4);
 }

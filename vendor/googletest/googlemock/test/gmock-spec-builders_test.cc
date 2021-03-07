@@ -2757,7 +2757,7 @@ TEST(ParameterlessExpectationsTest,
 
 }  // namespace
 
-// Allows the user to define their own main and then invoke gmock_main
+// Allows the user to define their own cmd and then invoke gmock_main
 // from it. This might be necessary on some platforms which require
 // specific setup and teardown.
 #if GMOCK_RENAME_MAIN

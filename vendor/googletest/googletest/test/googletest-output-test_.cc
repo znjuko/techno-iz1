@@ -265,7 +265,7 @@ TEST(SCOPED_TRACETest, CanBeRepeated) {
 
 // Here's the sequence of actions that happen in the test:
 //
-//   Thread A (main)                | Thread B (spawned)
+//   Thread A (cmd)                | Thread B (spawned)
 //   ===============================|================================
 //   spawns thread B                |
 //   -------------------------------+--------------------------------
@@ -1060,7 +1060,7 @@ class BarEnvironment : public testing::Environment {
   }
 };
 
-// The main function.
+// The cmd function.
 //
 // The idea is to use Google Test to run all the tests we have defined (some
 // of them are intended to fail), and then compare the test results

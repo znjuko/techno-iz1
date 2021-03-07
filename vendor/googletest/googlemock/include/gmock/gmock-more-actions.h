@@ -105,7 +105,7 @@
 //
 // GMOCK_INTERNAL_*_HAS_m_TEMPLATE_PARAMS and
 // GMOCK_INTERNAL_*_AND_n_VALUE_PARAMS are internal macros for
-// implementing ACTION_TEMPLATE.  The main trick we use is to create
+// implementing ACTION_TEMPLATE.  The cmd trick we use is to create
 // new macro invocations when expanding a macro.  For example, we have
 //
 //   #define ACTION_TEMPLATE(name, template_params, value_params)

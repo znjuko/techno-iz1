@@ -411,7 +411,7 @@ class Type(_GenericDeclaration):
                reference, pointer, array):
     """
         Args:
-          name: str name of main type
+          name: str name of cmd type
           templated_types: [Class (Type?)] template type info between <>
           modifiers: [str] type modifiers (keywords) eg, const, mutable, etc.
           reference, pointer, array: bools

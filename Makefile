@@ -13,3 +13,6 @@ run-all-tests:
 	echo "RUNNING TESTS :" \
 		&& make run-adder-test \
 				&& make run-storage-test
+
+build-project:
+	mkdir build && cd build && cmake -Dtest=ON --build .. && make

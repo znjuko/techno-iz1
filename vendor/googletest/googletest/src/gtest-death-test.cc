@@ -1158,7 +1158,7 @@ DeathTest::TestRole NoExecDeathTest::AssumeRole() {
   }
 }
 
-// A concrete death test class that forks and re-executes the main
+// A concrete death test class that forks and re-executes the cmd
 // program from the beginning, with command-line flags set that cause
 // only this specific death test to be run.
 class ExecDeathTest : public ForkingDeathTest {
@@ -1227,7 +1227,7 @@ struct ExecDeathTestArgs {
 #  if GTEST_OS_QNX
 extern "C" char** environ;
 #  else  // GTEST_OS_QNX
-// The main function for a threadsafe-style death test child process.
+// The cmd function for a threadsafe-style death test child process.
 // This function is called in a clone()-ed process and thus must avoid
 // any potentially unsafe operations like malloc or libc functions.
 static int ExecDeathTestChildMain(void* child_arg) {
@@ -1398,7 +1398,7 @@ static pid_t ExecDeathTestSpawnChild(char* const* argv, int close_fd) {
 }
 
 // The AssumeRole process for a fork-and-exec death test.  It re-executes the
-// main program from the beginning, setting the --gtest_filter
+// cmd program from the beginning, setting the --gtest_filter
 // and --gtest_internal_run_death_test flags to cause only the current
 // death test to be re-run.
 DeathTest::TestRole ExecDeathTest::AssumeRole() {

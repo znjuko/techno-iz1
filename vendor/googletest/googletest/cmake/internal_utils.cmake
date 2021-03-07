@@ -273,7 +273,7 @@ endfunction()
 
 # py_test(name)
 #
-# creates a Python test with the given name whose main module is in
+# creates a Python test with the given name whose cmd module is in
 # test/name.py.  It does nothing if Python is not installed.
 function(py_test name)
   if (PYTHONINTERP_FOUND)

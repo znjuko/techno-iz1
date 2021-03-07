@@ -4,12 +4,13 @@ option(test "Build all tests." OFF)
 
 project(techno_iz1 C CXX)
 
-enable_testing()
-
-add_subdirectory(main)
+add_subdirectory(cmd)
 add_subdirectory(src)
 
 if(test)
-    add_subdirectory(tests)
+    enable_testing()
+
     add_subdirectory(vendor/googletest)
+
+    add_subdirectory(tests)
 endif(test)

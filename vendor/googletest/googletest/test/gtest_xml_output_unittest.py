@@ -61,7 +61,7 @@ if SUPPORTS_STACK_TRACES:
   STACK_TRACE_TEMPLATE = '\nStack trace:\n*'
 else:
   STACK_TRACE_TEMPLATE = ''
-  # unittest.main() can't handle unknown flags
+  # unittest.cmd() can't handle unknown flags
   sys.argv.remove(NO_STACKTRACE_SUPPORT_FLAG)
 
 EXPECTED_NON_EMPTY_XML = """<?xml version="1.0" encoding="UTF-8"?>

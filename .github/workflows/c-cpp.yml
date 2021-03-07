@@ -2,7 +2,7 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ dev, main ]
   pull_request:
     branches: [ main ]
 
@@ -30,7 +30,7 @@ jobs:
         run: git --version
 
       - name: building our project
-        run: mkdir build && cd build && cmake -Dtest=ON --build .. && make
+        run: make build-project
 
       - name: checking build directory
         run: ls -l build

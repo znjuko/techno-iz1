@@ -1552,14 +1552,14 @@ class ThreadWithParam : public ThreadWithParamBase {
 // a public default constructor.
 //
 // The users of a TheadLocal instance have to make sure that all but one
-// threads (including the main one) using that instance have exited before
+// threads (including the cmd one) using that instance have exited before
 // destroying it. Otherwise, the per-thread objects managed for them by the
 // ThreadLocal instance are not guaranteed to be destroyed on all platforms.
 //
 // Google Test only uses global ThreadLocal objects.  That means they
-// will die after main() has returned.  Therefore, no per-thread
+// will die after cmd() has returned.  Therefore, no per-thread
 // object managed by Google Test will be leaked as long as all threads
-// using Google Test have exited when main() returns.
+// using Google Test have exited when cmd() returns.
 template <typename T>
 class ThreadLocal : public ThreadLocalBase {
  public:
@@ -1665,7 +1665,7 @@ class MutexBase {
         << "The current thread is not holding the mutex @" << this;
   }
 
-  // A static mutex may be used before main() is entered.  It may even
+  // A static mutex may be used before cmd() is entered.  It may even
   // be used before the dynamic initialization stage.  Therefore we
   // must be able to initialize a static mutex object at link time.
   // This means MutexBase has to be a POD and its member variables

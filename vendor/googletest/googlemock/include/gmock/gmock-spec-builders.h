@@ -672,7 +672,7 @@ class GTEST_API_ Sequence {
 // they are used to affect different mock objects.  The idea is that
 // each thread can create and set up its own mocks as if it's the only
 // thread.  However, for clarity of your tests we recommend you to set
-// up mocks in the main thread unless you have a good reason not to do
+// up mocks in the cmd thread unless you have a good reason not to do
 // so.
 class GTEST_API_ InSequence {
  public:

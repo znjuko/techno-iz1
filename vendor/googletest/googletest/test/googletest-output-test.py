@@ -324,7 +324,7 @@ class GTestOutputTest(gtest_test_utils.TestCase):
 
 if __name__ == '__main__':
   if NO_STACKTRACE_SUPPORT_FLAG in sys.argv:
-    # unittest.main() can't handle unknown flags
+    # unittest.cmd() can't handle unknown flags
     sys.argv.remove(NO_STACKTRACE_SUPPORT_FLAG)
 
   if GENGOLDEN_FLAG in sys.argv:
