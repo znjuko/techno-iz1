@@ -30,14 +30,11 @@ jobs:
         run: git --version
 
       - name: building our project
-        run: mkdir build
+        run: mkdir build && cd build && cmake -Dtest=ON --build .. && make
 
-      - name: checking directory
-        run: ls -l
+      - name: checking build directory
+        run: ls -l build
 
-      - name: ???
-        run:  cd build && cmake -Dtest=ON --build .. && make
-
-      - name: checking directory
-        run: ls -l
+      - name: running tests
+        run: make run-all-tests 
 
