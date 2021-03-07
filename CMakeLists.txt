@@ -1,19 +1,10 @@
 cmake_minimum_required(VERSION 3.10.2)
 
-project(techno_iz1 C)
+project(techno_iz1 C CXX)
 
-set(CMAKE_C_STANDARD 11)
+enable_testing()
 
-add_executable(${PROJECT_NAME} main.c tests/unit/storage/storage.cpp src/adder/adder.c src/adder/adder.h)
-
+add_subdirectory(main)
 add_subdirectory(src)
-
-target_link_directories(${PROJECT_NAME} PUBLIC src)
-
-target_link_libraries(${PROJECT_NAME} PUBLIC storage)
-
-target_include_directories(${PROJECT_NAME} PUBLIC
-        "${PROJECT_BINARY_DIR}"
-        "${PROJECT_SOURCE_DIR}/src"
-        )
-
+add_subdirectory(tests)
+add_subdirectory(lib/googletest)
