@@ -1,3 +1,3 @@
-#add_subdirectory(storage)
+add_subdirectory(storage)
 
 add_subdirectory(adder)

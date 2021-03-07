@@ -5,14 +5,9 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "adder.h"
+#include "storage.h"
 }
 
 TEST(initialize, ok) {
     EXPECT_TRUE(true);
-}
-
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }
