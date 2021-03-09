@@ -32,9 +32,6 @@ jobs:
       - name: installing lcov
         run: sudo apt install lcov
 
-      - name: installing genhtml
-        run: sudo apt install genhtml
-
       - name: building our project
         run: make build-project
 
