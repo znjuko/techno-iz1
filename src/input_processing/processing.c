@@ -1,10 +1,10 @@
 //
 // Created by Черных Никита Алекандрович on 3/5/21.
 //
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "processing.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 char get_char() {
     char c = '\0';

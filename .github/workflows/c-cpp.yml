@@ -50,4 +50,10 @@ jobs:
           name: code-coverage-report
           path: storage_coverage_output/
 
+      - name: Archive executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report
+          path: build/cmd/main
+
 

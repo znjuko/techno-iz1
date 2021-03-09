@@ -2,9 +2,9 @@
 // Created by Черных Никита Алекандрович on 3/5/21.
 //
 #include "storage.h"
-#include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 
 Element *create_map(size_t capacity) {
     Element *map = (Element *) calloc(capacity, sizeof(Element));

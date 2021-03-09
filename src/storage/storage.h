@@ -5,8 +5,8 @@
 #ifndef TECHNO_IZ1_STORAGE_H
 #define TECHNO_IZ1_STORAGE_H
 
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 typedef struct {
     char *type;
