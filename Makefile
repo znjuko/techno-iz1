@@ -39,3 +39,16 @@ get-storage-coverage:
  				&& make generate-lcov-storage \
       				&& make generate-coverage-html-storage
 
+get-all-coverage:
+	make get-storage-coverage
+
+valgrind-check:
+	valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --undef-value-errors=no --verbose --log-file=$(filename)  $(directory)
+
+valgrind-check-storage-test:
+	make valgrind-check directory=./build/tests/unit/storage/storage_test filename=valgrind-output/storage_report
+
+valgrind-check-all:
+	mkdir valgrind-output && make valgrind-check-storage-test
+
+
