@@ -40,7 +40,7 @@ int main() {
     add(&el1, st);
 
     print_values(st);
-    free_storage(st);
+    free_storage(&st);
 
     return 0;
 }

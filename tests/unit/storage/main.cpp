@@ -1,8 +1,7 @@
 //
 // Created by Черных Никита Алекандрович on 3/7/21.
 //
-
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 int main(int argc, char **argv)
 {
