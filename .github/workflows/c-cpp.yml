@@ -29,6 +29,15 @@ jobs:
       - name: checking git version
         run: git --version
 
+      - name: installing gcov
+        run: sudo apt install gcov
+
+      - name: installing lcov
+        run: sudo apt install lcov
+
+      - name: installing genhtml
+        run: sudo apt install genhtml
+
       - name: building our project
         run: make build-project
 
