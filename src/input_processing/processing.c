@@ -30,7 +30,7 @@ char *get_string() {
         if (buf.size + 1 >= buf.cap) {
             size_t new_cap = !buf.cap ? 1 : buf.cap * 2;
 
-            char *tmp = (char *)malloc((new_cap + 1) * sizeof(char));
+            char *tmp = (char *) malloc((new_cap + 1) * sizeof(char));
 
             if (!tmp) {
                 if (buf.string) {

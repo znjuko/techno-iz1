@@ -47,7 +47,7 @@ int main() {
             printf("Input type of animal: ");
             char *type = get_string();
 
-            if(type == NULL) {
+            if (type == NULL) {
                 printf("\nfailed to allocate memory; stopping execution...");
                 break;
             }
@@ -55,7 +55,7 @@ int main() {
             printf("Input colour of animal: ");
             char *colour = get_string();
 
-            if(colour == NULL) {
+            if (colour == NULL) {
                 printf("\nfailed to allocate memory; stopping execution...");
                 break;
             }
@@ -63,14 +63,14 @@ int main() {
             printf("Input name of animal: ");
             char *name = get_string();
 
-            if(name == NULL) {
+            if (name == NULL) {
                 printf("\nfailed to allocate memory; stopping execution...");
                 break;
             }
 
             Metadata animal = {type, colour, name};
 
-            if(!add(&animal, st)){
+            if (!add(&animal, st)) {
                 printf("\nfailed to add animal to storage; stopping execution...");
                 break;
             }
