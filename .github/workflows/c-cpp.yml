@@ -23,6 +23,9 @@ jobs:
       - name: installing lcov
         run: sudo apt install lcov
 
+      - name: installing valgrind
+        run: sudo apt install valgrind
+
       - name: building project
         run: make build-project
 
