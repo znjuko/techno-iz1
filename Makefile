@@ -17,23 +17,23 @@ generate-gcov:
 	cd $(output) && gcov $(dir)/src/$(test_dir)/CMakeFiles/$(test_name).dir/$(test_value).c.gcno && cp -rf $(dir)/src/$(test_dir)/CMakeFiles/$(test_name).dir/ .
 
 generate-gcov-storage:
-	make generate-gcov  dir=../$(BUILD_DIR)  test_dir=storage  test_name=storage test_value=storage output=storage_coverage
+	make generate-gcov  dir=../$(BUILD_DIR)  test_dir=storage  test_name=storage test_value=storage output=coverage
 
 generate-lcov:
 	lcov --capture --directory $(directory) --output-file $(output_filename).info
 
 generate-lcov-storage:
-	make generate-lcov output_filename=storage_coverage_output/storage_test directory=storage_coverage
+	make generate-lcov output_filename=coverage_output/storage_test directory=coverage
 
 generate-coverage-html:
 	genhtml $(filename).info --output-directory $(directory)
 
 generate-coverage-html-storage:
-	make generate-coverage-html filename=storage_coverage_output/storage_test directory=storage_coverage_output
+	make generate-coverage-html filename=coverage_output/storage_test directory=coverage_output
 
 get-storage-coverage:
-	mkdir storage_coverage \
- 		&& mkdir storage_coverage_output \
+	mkdir coverage \
+ 		&& mkdir coverage_output \
 	 		&& make generate-gcov-storage \
  				&& make generate-lcov-storage \
       				&& make generate-coverage-html-storage
@@ -48,6 +48,6 @@ valgrind-check-storage-test:
 	make valgrind-check directory=./build/tests/unit/storage/storage_test filename=valgrind-output/storage_report
 
 valgrind-check-all:
-	mkdir valgrind-output && make valgrind-check-storage-test
+	mkdir valgrind_output && make valgrind-check-storage-test
 
 
