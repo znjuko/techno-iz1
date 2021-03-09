@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libinput_processing.a CMakeFiles/input_processing.dir/processing.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libinput_processing.a

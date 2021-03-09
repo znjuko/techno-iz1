@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/storage/storage.c
+storage.h
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/storage/storage.h
+string.h
+-
+stdbool.h
+-
+stdlib.h
+-
+
+/Users/chernyh.nikita2/techno/c_p_p/techno-iz1/src/storage/storage.h
+stdio.h
+-
+stdbool.h
+-
+
