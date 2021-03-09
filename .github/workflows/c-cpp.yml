@@ -32,9 +32,6 @@ jobs:
       - name: building our project
         run: make build-project
 
-      - name: checking build directory
-        run: ls -l build
-
       - name: running tests
         run: make run-all-tests
 

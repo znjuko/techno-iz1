@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-Element *create_map_(size_t capacity) {
+Element *create_map(size_t capacity) {
     Element *map = (Element *) calloc(capacity, sizeof(Element));
     if (map == NULL) {
         return NULL;
@@ -17,11 +17,10 @@ Element *create_map_(size_t capacity) {
         map[i].capacity = 0;
         map[i].size = 0;
     }
-
     return map;
 };
 
-size_t hash_(char *key, Storage *st) {
+size_t hash(const char *key, Storage *st) {
     size_t place = 0;
     // because multiplying by 0 equals 0
     size_t multiply = 1;
@@ -36,13 +35,18 @@ size_t hash_(char *key, Storage *st) {
     return place;
 };
 
-bool resize_(Storage *st) {
+bool resize(Storage *st) {
     size_t old_capacity = st->capacity;
     st->capacity = st->capacity * st->size_multiplier;
-    Element *new_map = create_map_(st->capacity);
+    Element *new_map = create_map(st->capacity);
 
     if (new_map == NULL) {
         return false;
+    }
+
+    if (st->map == NULL) {
+        st->map = new_map;
+        return true;
     }
 
     for (size_t i = 0; i < old_capacity; ++i) {
@@ -51,13 +55,11 @@ bool resize_(Storage *st) {
         }
 
         // if pointer is not NULL -> then there is more then 0 element
-        size_t place = hash_(st->map[i].data[0].type, st);
+        size_t place = hash(st->map[i].data[0].type, st);
         new_map[place] = st->map[i];
     }
     // remove old map and write new map
-    if (st->map != NULL) {
-        free(st->map);
-    }
+    free(st->map);
     st->map = new_map;
 
     return true;
@@ -66,12 +68,12 @@ bool resize_(Storage *st) {
 bool add(Metadata *element, Storage *st) {
     st->size++;
     if (st->size / st->capacity >= st->load_maximum) {
-        if (!resize_(st)) {
+        if (!resize(st)) {
             return false;
         };
     };
 
-    size_t place = hash_(element->type, st);
+    size_t place = hash(element->type, st);
     // if there is any elements in key and keys are not equal -> increase place to add
     while (st->map[place].data != NULL && strcmp(st->map[place].data[0].type, element->type) != 0) {
         place = (place + st->step) % st->capacity;
@@ -133,11 +135,10 @@ Storage *create_storage(
         size_t capacity, size_t load_maximum,
 
         size_t hash_base, size_t step) {
-    Element *map = create_map_(capacity);
+    Element *map = create_map(capacity);
     if (map == NULL) {
         return NULL;
     }
-
     Storage *st = malloc(sizeof(Storage));
     st->size_multiplier = size_multiplier;
     st->size = size;
@@ -151,14 +152,26 @@ Storage *create_storage(
 }
 
 
-void free_storage(Storage *st) {
-    for (size_t i = 0; i < st->capacity; ++i) {
-        if (st->map[i].data == NULL) {
+void free_storage(Storage **st) {
+    if (*st == NULL) {
+        return;
+    }
+
+    if ((*st)->map == NULL) {
+        free(*st);
+        (*st) = NULL;
+        return;
+    }
+
+    for (size_t i = 0; i < (*st)->capacity; ++i) {
+        if ((*st)->map[i].data == NULL) {
             continue;
         }
 
-        free(st->map[i].data);
+        free((*st)->map[i].data);
     }
 
-    free(st->map);
+    free((*st)->map);
+    free(*st);
+    (*st) = NULL;
 }
