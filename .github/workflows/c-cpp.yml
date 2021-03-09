@@ -35,6 +35,9 @@ jobs:
       - name: running tests
         run: make run-all-tests
 
+      - name: ???
+        run: ls -lg
+
       - name: get test coverage
         run: make get-storage-coverage
 
