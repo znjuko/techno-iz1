@@ -38,7 +38,7 @@ make valgrind-check-all
 
 It will create folder valgrind_output where all valgrind info is stored
 
-#### CI :
+## CI :
 
 You can find CI, working on github-actions here. CI has such types of artifacts:
 - valgrind-report : valgrind memory check output
